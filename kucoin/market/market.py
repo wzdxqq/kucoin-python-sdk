@@ -583,3 +583,12 @@ class MarketData(KucoinBaseRestApi):
         if chain:
             params['chain']=chain
         return self._request('GET', f'/api/v3/currencies/{currency}', params=params)
+
+
+    def get_currencies_v3(self):
+        """
+        Get Currency List
+        https://www.kucoin.com/docs/rest/spot-trading/market-data/get-currency-list
+
+        """
+        return self._request('GET', '/api/v3/currencies')
